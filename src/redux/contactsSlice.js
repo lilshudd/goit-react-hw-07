@@ -52,15 +52,4 @@ export const contactsSlice = createSlice({
   },
 });
 
-export const selectContacts = (state) => state.contacts.items;
-export const selectContactsLoading = (state) => state.contacts.loading;
-export const selectContactsError = (state) => state.contacts.error;
-
-export const selectFilteredContacts = (state, filter) => {
-  const contacts = selectContacts(state);
-  return contacts.filter((contact) =>
-    contact.name.toLowerCase().includes(filter.toLowerCase())
-  );
-};
-
 export default contactsSlice.reducer;
